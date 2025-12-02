@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost Calculator</title>
+
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <h1 class="header__title">
+                    Никита Ренцаев —
+                    <span>front-end developer</span>
+                </h1>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="service">
+            <div class="container">
+                <div class="service__content">
+                    <h2 class="service__title">
+                        Рассчитайте стоимость вёрстки по своим требованиям:
+                    </h2>
+
+                    <div class="service__flex-group">
+                        <fieldset class="service__option-group">
+                            <legend>Тип сайта</legend>
+
+                            <label class="service__radio-label" for="landing">
+                                <input type="radio" name="site-type" value="landing" id="landing" data-price="30000" checked>
+                                <span>Лендинг</span> — 30 000 ₽
+                            </label>
+
+                            <label class="service__radio-label" for="corporate">
+                                <input type="radio" name="site-type" value="corporate" id="corporate" data-price="70000">
+                                <span>Корпоративный</span> — 70 000 ₽
+                            </label>
+
+                            <label class="service__radio-label" for="shop">
+                                <input type="radio" name="site-type" value="shop" id="shop" data-price="150000">
+                                <span>Интернет-магазин</span> — 150 000 ₽
+                            </label>
+                        </fieldset>
+
+                        <fieldset class="service__option-group">
+                            <legend>Сроки выполнения</legend>
+
+                            <label for="deadline-30" class="service__radio-label">
+                                <input type="radio" name="deadline" id="deadline-30" value="30" data-multiplier="1" checked>
+                                30 дней — стандарт
+                            </label>
+
+                            <label for="deadline-14" class="service__radio-label">
+                                <input type="radio" name="deadline" id="deadline-14" value="14" data-multiplier="1.5">
+                                14 дней — быстро (1.5x)
+                            </label>
+
+                            <label for="deadline-7" class="service__radio-label">
+                                <input type="radio" name="deadline" id="deadline-7" value="7" data-multiplier="2">
+                                7 дней — срочно (2x)
+                            </label>
+                        </fieldset>
+
+                        <fieldset class="service__option-group">
+                            <legend>Дополнительно</legend>
+
+                            <label for="adaptive" class="service__radio-label">
+                                <input type="checkbox" value="adaptive" name="features" id="adaptive" data-price="15000">
+                                <span>Адаптивная вёрстка</span> — 15 000 ₽
+                            </label>
+
+                            <label for="adminPanel" class="service__radio-label">
+                                <input type="checkbox" value="admin" name="features" id="adminPanel" data-price="30000">
+                                <span>Админ панель</span> — 30 000 ₽
+                            </label>
+
+                            <label for="integration" class="service__radio-label">
+                                <input type="checkbox" value="integration" name="features" id="integration" data-price="10000">
+                                <span>Интеграция с 1С</span> — 10 000 ₽
+                            </label>
+
+                            <label for="seo" class="service__radio-label">
+                                <input type="checkbox" value="seo" name="features" id="seo" data-price="10000">
+                                <span>SEO-подготовка</span> — 10 000 ₽
+                            </label>
+
+                            <label for="disane" class="service__radio-label">
+                                <input type="checkbox" value="disane" name="features" id="disane" data-price="50000">
+                                <span>Дизайн с нуля</span> — 50 000 ₽
+                            </label>
+                        </fieldset>
+                    </div>
+
+                    <div class="service__flex-group service__pages">
+                        <select name="pages" id="pages">
+                            <option value="1" data-price="0" selected>1 Страница</option>
+                            <option value="5" data-price="20000">До 5 страниц</option>
+                            <option value="10" data-price="40000">До 10 страниц</option>
+                            <option value="20" data-price="80000">До 20 страниц</option>
+                            <option value="20+" data-price="100000">20+ страниц</option>
+                        </select>
+
+                        <div class="range-group">
+                            <div class="range-labels">
+                                <label for="products">Количество товаров в каталоге</label>
+                                <span class="range-value" id="productsValue">10</span> шт.
+                            </div>
+
+                            <input 
+                                type="range"
+                                name="products" 
+                                id="products"
+                                min="10"
+                                max="1000"
+                                step="10"
+                                value="10"
+                                data-price-per="500"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="service__price">
+                        <p class="service__full-price">
+                            Услуга будет стоить: <span id="fullPrice">0</span> ₽
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <h2 class="footer__title">Связаться со мной:</h2>
+
+                <nav class="footer__social-links">
+                    <a href="#">Telegram</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Discord</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
